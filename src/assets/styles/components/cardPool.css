@@ -1,0 +1,87 @@
+.card {
+    width: 23em;
+    background-color: #dabe39;
+    color: black;
+    border-radius: 26px;
+    border: 1px solid blue;
+    margin: 1em;
+    padding: 2em 0;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 1em 0;
+    padding: 0 2em;
+}
+.card-header img {
+    height: 3em;
+    object-fit: cover;
+}
+
+.card-header-title {
+    text-transform: uppercase;
+}  
+.card-header-title .fees {
+    background-color: #ebc713;
+    padding: .5em;
+    border-radius: 16px;
+    width: fit-content;
+}
+.card-body {
+    margin: 0 0 1em 0;
+    padding: 0 2em;
+}
+.card-body ul,.card-footer ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.card-body ul li,.card-footer ul li {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 .8em 0;
+}
+
+.card-body-harvest {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-body-harvest button {
+    border-radius: 16px;
+    border: none;
+    padding: 1em 1.2em;
+    height: fit-content;
+    font-size:medium;
+}
+
+.unlock-btn {
+    width: 100%;
+    background-color: #ebc713;
+    border-radius: 16px;
+    border: none;
+    padding: 1em 1.2em;
+    height: fit-content;
+    font-size:medium;
+    cursor: pointer;
+}
+.unlock-btn:hover {
+    background-color: #816c0371;
+}
+
+.card-footer {
+    padding: 0 2em;
+}
+
+.hr {
+    border-top: 2px solid rgb(231, 227, 235);
+}
+.card-footer .show-more {
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: center;
+    margin: 0 0 .5em 0;
+    padding: 24px;
+}

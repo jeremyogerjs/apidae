@@ -1,0 +1,100 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #DABE39;
+    align-items: center;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.menu ul li {
+    padding: 1em .5em;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+.menu-link a,.home a {
+    text-decoration: none;
+    color: black;
+
+}
+.menu ul .menu-link:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.home a, .home {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+.logo {
+    height: 1.5em;
+    object-fit: cover;
+}
+
+.dropdown {
+    position: relative;
+}
+.dropdown:focus .sub-menu {
+    display: flex;
+}
+.dropdown:hover .sub-menu {
+    display: flex;
+}
+
+.sub-menu:hover,.sub-menu:focus {
+    display: flex;
+}
+.sub-menu ul {
+    padding-inline-start: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: .5em;
+    align-items: flex-start;
+    width: 100%;
+}
+.sub-menu ul li {
+    margin: 0;
+    width: 90%;
+}
+.sub-menu {
+    position: absolute;
+    background-color: #DABE39;
+    top: 3em;
+    left: 0;
+    width: 10em;
+    border-radius: 10px;
+    display: none;
+}
+.sub-menu ul li:hover {
+    background-color: white;
+    color: black;
+}
+
+.menu-left-wallet {
+    -webkit-box-align: center;
+    align-items: center;
+    border: 0px;
+    border-radius: 16px;
+    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    opacity: 1;
+    outline: 0px;
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    height: 32px;
+    padding: 0px 16px;
+    background-color: rgb(31, 199, 212);
+    color: white;
+}
