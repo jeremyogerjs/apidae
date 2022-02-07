@@ -1,0 +1,66 @@
+:root {
+    --main-bg-color:#DABE39;
+    --main-dark-bg-color:#51331B;
+    --main-bg-wrapper-color:#F4DA85;
+}
+body {
+    background-color: var(--main-bg-wrapper-color);
+}
+.container {
+    clear: both;
+    height: max-content;
+    min-height: 100vh;
+}
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.hero {
+    background-color: var(--main-bg-color);
+    height: 15em;
+    display: flex;
+    align-items: center;
+}
+.hero-content {
+    margin-left: 22em;
+}
+.hero-title {
+    font-size: 4em;
+    color: var(--main-dark-bg-color);
+}
+.hero-body {
+    font-size: 1.5em;
+}
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+}
+.breadcrumb-item {
+    margin-right: .5em;
+}
+.breadcrumb-item a {
+    text-decoration: none;
+    color: black;
+}
+.breadcrumb-item:hover {
+    opacity: .65;
+    cursor: pointer;
+}
+.breadcrumb-item-active {
+    font-weight: 600;
+    position: relative;
+    margin-right: .5em;
+    padding-bottom: 3px;
+} 
+.breadcrumb-item-active::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: var(--main-dark-bg-color);
+    border-radius: 2px 2px 0px 0px;
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="card-wrapper">
+  <div>
     <div class="card">
       <div class="card-header">
         <img src="../assets/logo/apt.png" alt="" />
@@ -31,12 +31,17 @@
       </div>
       <div class="hr"></div>
       <div class="card-footer">
-        <p class="show-more">Details</p>
-        <div>
+        <p class="show-more" v-if="!isActive" @click="showMore">
+          Details <font-awesome-icon icon="chevron-down" size="xs" />
+        </p>
+        <p class="show-more" v-else @click.exact="showMore">
+          Hide <font-awesome-icon icon="chevron-up" size="xs" rotate="90" />
+        </p>
+        <div class="show-more-content" :class="{ active: isActive }">
           <ul>
             <li>
               <span>Deposit: </span>
-              <span>Titre ede la paire</span>
+              <span>Titre de la paire</span>
             </li>
             <li>
               <span>Total Liquidity: </span>
@@ -53,6 +58,16 @@
 <script>
 export default {
   name: "CardPool",
+  data() {
+    return {
+      isActive: false,
+    };
+  },
+  methods: {
+    showMore() {
+      this.isActive = !this.isActive;
+    },
+  },
 };
 </script>
 

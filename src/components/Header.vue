@@ -26,7 +26,7 @@
             <div class="menu-left">
                 <ul>
                     <li class="home"><img class="logo" src="../assets/logo/apt.png" alt=""> $1.007</li>
-                    <li class="menu-link dropdown">Langue
+                    <li class="dropdown"><font-awesome-icon class="settings" icon="globe" size="lg" />
                         <div class="sub-menu">
                             <ul>
                                 <li>FR</li>
@@ -34,7 +34,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li>Setting</li>
+                    <li><font-awesome-icon class="settings" icon="cog" size="lg" /></li>
                     <li><button class="menu-left-wallet">Connect Wallet</button></li>
                 </ul>
             </div>
