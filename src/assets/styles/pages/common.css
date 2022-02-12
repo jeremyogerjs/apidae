@@ -1,10 +1,11 @@
 :root {
     --main-bg-color:#DABE39;
     --main-dark-bg-color:#51331B;
-    --main-bg-wrapper-color:#F4DA85;
+    --main-bg-wrapper-color:#FBE288;
 }
 body {
     background-color: var(--main-bg-wrapper-color);
+    overflow-x: hidden;
 }
 .container {
     clear: both;
@@ -35,7 +36,8 @@ body {
 .breadcrumb {
     display: flex;
     justify-content: center;
-    margin: 1em 0;
+    padding: .5em 0;
+    background-color: #F2F2F2;
 }
 .breadcrumb-item {
     margin-right: .5em;
@@ -63,4 +65,20 @@ body {
     width: 100%;
     background-color: var(--main-dark-bg-color);
     border-radius: 2px 2px 0px 0px;
+}
+
+
+/* responsive */
+
+
+@media screen and (max-width:1200px) {
+    .hero-content {
+        margin-left: 12em;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .hero-content {
+        margin-left: 3em;
+    }
 }
