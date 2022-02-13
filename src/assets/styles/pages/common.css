@@ -2,6 +2,7 @@
     --main-bg-color:#DABE39;
     --main-dark-bg-color:#51331B;
     --main-bg-wrapper-color:#FBE288;
+    --main-token-wrapper-color: #C3A73B;
 }
 body {
     background-color: var(--main-bg-wrapper-color);

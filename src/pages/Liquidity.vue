@@ -85,13 +85,15 @@ export default {
   cursor: pointer;
   -webkit-box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.05);
+  transition: all .2s ease-in;
 }
 .icon-btn {
   margin-right: 0.5em;
 }
 .btn:hover,
 .icon:hover {
-  opacity: 0.65;
+  background-color: var(--main-bg-wrapper-color);
+  color: var(--main-bg-dark-color);
   cursor: pointer;
 }
 .icon {

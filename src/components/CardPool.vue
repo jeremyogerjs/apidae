@@ -2,7 +2,7 @@
   <div>
     <div class="card">
       <div class="card-header">
-        <img src="../assets/logo/apt.png" alt="" />
+          <img src="../assets/logo/apt.png" alt="" />
         <div class="card-header-title">
           <p>Titre paire</p>
           <p class="fees">10X</p>

@@ -35,16 +35,18 @@
                             </ul>
                         </div>
                     </li>
-                    <li><font-awesome-icon class="settings" icon="cog" size="lg" /></li>
+                    <li @click="isActive = !isActive"><font-awesome-icon class="settings" icon="cog" size="lg" /></li>
                     <li><button class="menu-left-wallet">Connect Wallet</button></li>
                 </ul>
             </div>
         </nav>
+        <Settings v-if="isActive" v-on:toggleActive="isActive = !isActive" :active="isActive" />
     </div>
 </template>
 
 <script>
 import Vue from "vue";
+import Settings from "./Settings.vue";
 Vue.directive("click-outside", {
   bind(el, binding, vnode) {
     el.clickOutsideEvent = (event) => {
@@ -60,9 +62,13 @@ Vue.directive("click-outside", {
 });
 export default {
     name:"Head",
+    components: {
+        Settings,
+    },
     data() {
         return {
             isMobile: false,
+            isActive:false,
         }
     },
     methods: {
