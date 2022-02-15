@@ -13,7 +13,8 @@
         <div class="tokenA">
           <p @click="selectToken('')">
             <img class="icon-token" :src="getImgUrl(tokenA.img)" alt="" />
-            {{ tokenA.value }}<font-awesome-icon icon="chevron-down" size="xs" />
+            {{ tokenA.value
+            }}<font-awesome-icon icon="chevron-down" size="xs" />
           </p>
           <div class="wrapperToken">
             <div class="wrapperTokenInput">
@@ -34,6 +35,7 @@
                     maxlength="79"
                     spellcheck="false"
                     value=""
+                    v-model="tokenA.amountTokenA"
                   />
                 </div>
               </div>
@@ -42,7 +44,7 @@
           </div>
         </div>
         <div class="icon-swap">
-          <button>
+          <button @click="switchToken">
             <font-awesome-icon
               class="default-icon"
               icon="fas fa-arrow-down"
@@ -58,7 +60,8 @@
         <div class="tokenB">
           <p @click="selectToken('b')">
             <img class="icon-token" :src="getImgUrl(tokenB.img)" alt="" />
-            {{ tokenB.value }}<font-awesome-icon icon="chevron-down" size="xs" />
+            {{ tokenB.value
+            }}<font-awesome-icon icon="chevron-down" size="xs" />
           </p>
           <div class="wrapperToken">
             <div class="wrapperTokenInput">
@@ -79,6 +82,7 @@
                     maxlength="79"
                     spellcheck="false"
                     value=""
+                    v-model="tokenB.amountTokenB"
                   />
                 </div>
               </div>
@@ -115,16 +119,19 @@ export default {
   data() {
     return {
       isActive: false,
-      token:"",
+      isSwitch: false,
+      token: "",
       tokenA: {
-        id:"a",
+        id: "a",
         value: "bnb",
         img: "bnb.png",
+        amountTokenA: null,
       },
       tokenB: {
-        id:"b",
+        id: "b",
         value: "usdt",
         img: "usdt.png",
+        amountTokenB: null,
       },
     };
   },
@@ -134,22 +141,49 @@ export default {
       return images("./" + img);
     },
     selectToken(token) {
-        this.isActive = !this.isActive;
-        if(token == "b") {
-            this.token = this.tokenB;
-        } else {
-            this.token = this.tokenA
-        }
+      this.isActive = !this.isActive;
+      if (token == "b") {
+        this.token = this.tokenB;
+      } else {
+        this.token = this.tokenA;
+      }
     },
     getToken(token) {
-        if (token.id == "a") {
-            this.tokenA.value = token.value;
-            this.tokenA.img = token.img;
-        } else {
-            this.tokenB.value = token.value;
-            this.tokenB.img = token.img;
-        }
-    }
+      if (token.id == "a") {
+        this.tokenA.value = token.value;
+        this.tokenA.img = token.img;
+      } else {
+        this.tokenB.value = token.value;
+        this.tokenB.img = token.img;
+      }
+    },
+    switchToken() {
+      if (!this.isSwitch) {
+        let tempTokenValue = this.tokenA.value;
+        let tempTokenimg = this.tokenA.img;
+        let tempTokenAmount = this.tokenA.amountTokenA;
+        this.tokenA.value = this.tokenB.value;
+        this.tokenA.img = this.tokenB.img;
+        this.tokenA.amountTokenA = this.tokenB.amountTokenB;
+
+        this.tokenB.value = tempTokenValue;
+        this.tokenB.img = tempTokenimg;
+        this.tokenB.amountTokenB = tempTokenAmount;
+      } else {
+        let tempTokenValue = this.tokenA.value;
+        let tempTokenimg = this.tokenA.img;
+        let tempTokenAmount = this.tokenA.amountTokenA;
+        this.tokenA.value = this.tokenB.value;
+        this.tokenA.img = this.tokenB.img;
+        this.tokenA.amountTokenA = this.tokenB.amountTokenB;
+
+        this.tokenB.value = tempTokenValue;
+        this.tokenB.img = tempTokenimg;
+        this.tokenB.amountTokenB = tempTokenAmount;
+
+      }
+      this.isSwitch = !this.isSwitch;
+    },
   },
 };
 </script>
