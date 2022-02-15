@@ -8,12 +8,21 @@
         <router-link to="/liquidity">Liquidity</router-link>
       </p>
     </div>
+
+    <div class="card-wrapper">
+      <swap-pool />
+    </div>
+
   </div>
 </template>
 
 <script>
+import SwapPool from "../components/SwapPool.vue";
 export default {
   name: "Exchange",
+  components: {
+    SwapPool,
+  }
 };
 </script>
 

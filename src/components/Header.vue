@@ -76,7 +76,6 @@ export default {
             this.isMobile = !this.isMobile;
         },
         closeMenu(e) {
-            console.log(e.target.className);
             if(e.target.className == "logo" || e.target.className?.animVal == "svg-inline--fa fa-bars" || e.target.className?.animVal == "") {
                 return;
             } else {
